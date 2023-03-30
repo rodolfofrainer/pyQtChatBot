@@ -1,6 +1,7 @@
 import openai
 import os
 import env
+import random
 
 
 class Chatbot:
@@ -12,7 +13,7 @@ class Chatbot:
             engine='text-davinci-003',
             prompt=user_input,
             max_tokens=4000,
-            temperature=0.5
+            temperature=random.randint(0, 100)/100,
         ).choices[0].text
         return response
 
